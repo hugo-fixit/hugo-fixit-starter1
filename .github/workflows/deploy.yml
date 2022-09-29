@@ -1,0 +1,55 @@
+name: Hugo build and deploy
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'assets/**'
+      - 'content/**'
+      - 'data/**'
+      - 'static/**'
+      - 'themes/**'
+      - 'config.toml'
+  workflow_run:
+    workflows: ["Update theme"]
+    types:
+      - completed
+  workflow_dispatch:
+jobs:
+  Actions-Hugo-Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+        with:
+          ssh-key: ${{ secrets.SYNC_CONTENT }}
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Install
+        run: npm install
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: latest
+          extended: true
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to Github Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: public
+          clean: true
+          single-commit: true
+
+      # - name: Deploy to Github Pages (another repository)
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     deploy_key: ${{ secrets.GP_DEPLOY_KEY }}
+      #     external_repository: username/username.github.io
+      #     publish_branch: main
+      #     publish_dir: ./public
+      #     commit_message: ":rocket: ${{ github.event.head_commit.message }}"

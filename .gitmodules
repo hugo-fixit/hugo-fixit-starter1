@@ -1,0 +1,6 @@
+[submodule ".shell"]
+	path = .shell
+	url = https://github.com/hugo-fixit/hugo-shell.git
+[submodule "themes/FixIt"]
+	path = themes/FixIt
+	url = https://github.com/hugo-fixit/FixIt.git

@@ -1,0 +1,22 @@
+{
+  "name": "hugo-fixit-blog",
+  "version": "1.0.0",
+  "description": "This is a quick start template for Hugo theme [FixIt](https://github.com/hugo-fixit/FixIt). It uses Git submodule feature to load the theme.",
+  "main": "index.js",
+  "scripts": {
+    "build": "hugo -v --gc --minify",
+    "server": "hugo server -D --disableFastRender --navigateToChanged",
+    "server:production": "npm run server -- --environment production",
+    "update:theme": "git submodule update --remote --merge && git add themes/FixIt && git commit -m ':arrow_up: Chore(theme): update FixIt version'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugo-fixit/hugo-fixit-blog.git"
+  },
+  "author": "Lruihao (https://github.com/Lruihao)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hugo-fixit/hugo-fixit-blog/issues"
+  },
+  "homepage": "https://github.com/hugo-fixit/hugo-fixit-blog#readme"
+}
