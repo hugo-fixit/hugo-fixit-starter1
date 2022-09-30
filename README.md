@@ -1,4 +1,4 @@
-# Hugo FixIt Blog
+# Hugo FixIt Blog Template (Git)
 
 This is a quick start template for Hugo theme [FixIt](https://github.com/hugo-fixit/FixIt). It uses Git submodule feature to load the theme.
 
@@ -49,7 +49,7 @@ hugo server --disableFastRender --navigateToChanged
 hugo server --disableFastRender --navigateToChanged --environment production
 ```
 
-## Shell
+### Shell
 
 Run `hugo_main.sh` to choice frequently-used Hugo commands:
 
