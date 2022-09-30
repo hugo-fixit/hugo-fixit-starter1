@@ -40,16 +40,8 @@ jobs:
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
+          # See https://github.com/JamesIves/github-pages-deploy-action#configuration-
           branch: gh-pages
           folder: public
           clean: true
           single-commit: true
-
-      # - name: Deploy to Github Pages (another repository)
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     deploy_key: ${{ secrets.GP_DEPLOY_KEY }}
-      #     external_repository: username/username.github.io
-      #     publish_branch: main
-      #     publish_dir: ./public
-      #     commit_message: ":rocket: ${{ github.event.head_commit.message }}"
