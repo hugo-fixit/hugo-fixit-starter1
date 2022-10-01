@@ -9,18 +9,20 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  Update-FixIt:
     runs-on: ubuntu-latest
     steps:
-      - name: 🛎️ Checkout code
+      - name: Check out repository code
         uses: actions/checkout@v3
         with:
           submodules: true
           fetch-depth: 0
 
-      - name: ⬆️ Update theme
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          npm run update:theme
-          git push --force-with-lease
+      - name: Update theme
+        run: git submodule update --remote --merge themes/FixIt
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: ':arrow_up: Chore(theme): update FixIt version'
+          commit_author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'

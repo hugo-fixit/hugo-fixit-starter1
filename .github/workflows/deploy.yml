@@ -10,7 +10,7 @@ on:
       - 'themes/**'
       - 'config.toml'
   workflow_run:
-    workflows: ["Update theme"]
+    workflows: ['Update theme']
     types:
       - completed
   workflow_dispatch:
