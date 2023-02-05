@@ -7,7 +7,7 @@ languageCode = 'en'
 theme = "FixIt"
 
 # -------------------------------------------------------------------------------------
-# Menu Settings
+# Menu Configuration
 # See: https://fixit.lruihao.cn/theme-documentation-basics/#menu-advanced-configuration
 # -------------------------------------------------------------------------------------
 
@@ -31,7 +31,7 @@ theme = "FixIt"
       draft = false
       # FixIt 0.2.16 | NEW add fontawesome icon to a specific menu item
       icon = "fa-solid fa-archive"
-      # FixIt 0.2.16 | NEW set menu item type, optional value: ["mobile", "desktop"]
+      # FixIt 0.2.16 | NEW set menu item type, optional values: ["mobile", "desktop"]
       type = ""
   [[menu.main]]
     identifier = "categories"
@@ -55,7 +55,8 @@ theme = "FixIt"
       icon = "fa-solid fa-tags"
 
 # -------------------------------------------------------------------------------------
-# Theme Core Configuration Settings
+# Theme Core Configuration
+# See: https://fixit.lruihao.cn/theme-documentation-basics/#site-configuration
 # -------------------------------------------------------------------------------------
 
 [params]
@@ -83,9 +84,6 @@ theme = "FixIt"
   # FixIt 0.2.14 | NEW FixIt will, by default, inject a theme meta tag in the HTML head on the home page only.
   # You can turn it off, but we would really appreciate if you don’t, as this is a good way to watch FixIt's popularity on the rise.
   disableThemeInject = false
-  # FixIt 0.2.16 | NEW Auto Bookmark Support
-  # If true, save the reading progress when closing the page.
-  autoBookmark = false
 
   # FixIt 0.2.0 | NEW App icon config
   [params.app]
@@ -107,7 +105,7 @@ theme = "FixIt"
   # FixIt 0.2.0 | NEW Search config
   [params.search]
     enable = true
-    # type of search engine ["lunr", "algolia"]
+    # type of search engine ["lunr", "algolia", "fuse"]
     type = "lunr"
     # max index length of the chunked content
     contentLength = 4000
@@ -125,6 +123,17 @@ theme = "FixIt"
       index = ""
       appID = ""
       searchKey = ""
+    [params.search.fuse]
+      # FixIt 0.2.17 | NEW https://fusejs.io/api/options.html
+      isCaseSensitive = false
+      minMatchCharLength = 2
+      findAllMatches = false
+      location = 0
+      threshold = 0.3
+      distance = 100
+      ignoreLocation = false
+      useExtendedSearch = false
+      ignoreFieldNorm = false
 
   # Header config
   [params.header]
@@ -154,7 +163,8 @@ theme = "FixIt"
   # Footer config
   [params.footer]
     enable = true
-    # FixIt 0.2.0 | NEW Custom content (HTML format is supported)
+    # FixIt 0.2.17 | CHANGED Custom content (HTML format is supported)
+    # For advanced use, see parameter `params.customFilePath.footer`
     custom = ""
     # FixIt 0.2.0 | NEW whether to show Hugo and theme info
     hugo = true
@@ -164,8 +174,6 @@ theme = "FixIt"
     author = true
     # Site creation year
     since = 2021
-    # FixIt 0.2.14 | NEW Site creation time
-    siteTime = "" # e.g. "2021-12-18T16:15:22+08:00"
     # FixIt 0.2.14 | NEW whether to show total word count of site content
     wordCount = true
     # FixIt 0.2.12 | NEW Public network security only in China (HTML format is supported)
@@ -174,6 +182,20 @@ theme = "FixIt"
     icp = ""
     # license info (HTML format is supported)
     license = '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+    # FixIt 0.2.17 | CHANGED Site creation time
+    [params.footer.siteTime]
+      enable = false
+      animate = true
+      icon = "fa-solid fa-heartbeat"
+      pre = ""
+      value = "" # e.g. "2021-12-18T16:15:22+08:00"
+    # FixIt 0.2.17 | NEW footer lines order, optional values: ["first", 0, 1, 2, 3, 4, 5, "last"]
+    [params.footer.order]
+      powered = 0
+      copyright = 0
+      statistics = 0
+      visitor = 0
+      beian = 0
 
   # FixIt 0.2.0 | NEW Section (all posts) page config
   [params.section]
@@ -199,6 +221,14 @@ theme = "FixIt"
     # amount of RSS pages
     rss = 10
 
+  # FixIt 0.2.17 | NEW TagCloud config for tags page
+  [params.tagcloud]
+    enable = false
+    min = 14 # Minimum font size in px
+    max = 32 # Maximum font size in px
+    peakCount = 10 # Maximum count of posts per tag
+    orderby = "name" # Order of tags, optional values: ["name", "count"]
+
   # Home page config
   [params.home]
     # FixIt 0.2.0 | NEW amount of RSS pages
@@ -210,6 +240,8 @@ theme = "FixIt"
       gravatarEmail = "xx@xx.com"
       # URL of avatar shown in home page
       avatarURL = ""
+      # FixIt 0.2.17 | NEW identifier of avatar menu link
+      avatarMenu = ""
       # FixIt 0.2.7 | CHANGED title shown in home page (HTML format is supported)
       title = ""
       # subtitle shown in home page
@@ -310,6 +342,8 @@ theme = "FixIt"
     RootMe = ""
     Feishu = ""
     TryHackMe = ""
+    Douyin = ""
+    TikTok = ""
     Phone = ""
     Email = ""
     RSS = true
@@ -340,6 +374,18 @@ theme = "FixIt"
     pageStyle = "normal"
     # FixIt 0.2.14 | NEW Gravatar is force-used as the author's avatar
     gravatarForce = false
+    # FixIt 0.2.17 | CHANGED Auto Bookmark Support
+    # If true, save the reading progress when closing the page.
+    autoBookmark = false
+    # FixIt 0.2.17 | NEW whether to enable wordCount
+    wordCount = true
+    # FixIt 0.2.17 | NEW whether to enable readingTime
+    readingTime = true
+    # FixIt 0.2.17 | NEW end of post flag
+    endFlag = ""
+    # FixIt 0.2.18 | NEW whether to enable instant.page
+    instantPage = false
+
     # FixIt 0.2.15 | NEW Repost config
     [params.page.repost]
       enable = false
@@ -407,6 +453,18 @@ theme = "FixIt"
       scale = true
       # whether to add FullscreenControl
       fullscreen = true
+    # FixIt 0.2.17 | NEW Donate (Sponsor) settings
+    [params.page.reward]
+      enable = false
+      animation = false
+      # position relative to post footer, optional values: ["before", "after"]
+      position = "after"
+      # comment = "Buy me a coffee"
+      [params.page.reward.ways]
+        # wechatpay = "/images/wechatpay.png"
+        # alipay = "/images/alipay.png"
+        # paypal = "/images/paypal.png"
+        # bitcoin = "/images/bitcoin.png"
     # FixIt 0.2.0 | CHANGED social share links in post page
     [params.page.share]
       enable = true
@@ -451,7 +509,7 @@ theme = "FixIt"
         editorTravel = true
         flatMode = "auto"
         maxNesting = 3
-        # It take effect when `params.page.lightgallery` is enabled
+        # FixIt 0.2.17 | CHANGED enable lightgallery support
         lightgallery = false
         locale = "" # FixIt 0.2.15 | NEW
       # FixIt 0.1.1 | NEW Disqus comment config (https://disqus.com)
@@ -483,9 +541,9 @@ theme = "FixIt"
         serverURLs = ""
         # FixIt 0.2.6 | NEW emoji data file name, default is "google.yml"
         # ["apple.yml", "google.yml", "facebook.yml", "twitter.yml"]
-        # located in "themes/FixIt/assets/data/emoji/" directory
+        # located in "themes/FixIt/assets/lib/valine/emoji/" directory
         # you can store your own data files in the same path under your project:
-        # "assets/data/emoji/"
+        # "assets/lib/valine/emoji/"
         emoji = ""
         commentCount = true # FixIt 0.2.13 | NEW
       # FixIt 0.2.16 | CHANGED Waline comment config (https://waline.js.org)
@@ -505,6 +563,7 @@ theme = "FixIt"
         texRenderer = false # FixIt 0.2.16 | NEW
         search = false # FixIt 0.2.16 | NEW
         recaptchaV3Key = "" # FixIt 0.2.16 | NEW
+        reaction = false # FixIt 0.2.18 | NEW
       # Facebook comment config (https://developers.facebook.com/docs/plugins/comments)
       [params.page.comment.facebook]
         enable = false
@@ -542,8 +601,10 @@ theme = "FixIt"
         path = ""
         visitor = true
         commentCount = true
-        # It take effect when `params.page.lightgallery` is enabled
+        # FixIt 0.2.17 | CHANGED enable lightgallery support
         lightgallery = false
+        # FixIt 0.2.17 | NEW enable Katex support
+        katex = false
       # FixIt 0.2.14 | NEW Giscus comments config
       [params.page.comment.giscus]
         enable = false
@@ -552,9 +613,10 @@ theme = "FixIt"
         category = ""
         categoryId = ""
         mapping = ""
+        term = ""
         reactionsEnabled = "1"
         emitMetadata = "0"
-        inputPosition = "bottom" # top, bottom
+        inputPosition = "bottom" # ["top", "bottom"]
         lightTheme = "light"
         darkTheme = "dark"
         lazyLoad = true
@@ -599,6 +661,7 @@ theme = "FixIt"
   [params.pangu]
     # For Chinese writing
     enable = false
+    selector = "article" # FixIt 0.2.17 | NEW
 
   # FixIt 0.2.12 | NEW Watermark config
   # Detail config see https://github.com/Lruihao/watermark#readme
@@ -715,6 +778,25 @@ theme = "FixIt"
     light = ""
     dark = ""
     height = "2px"
+  
+  # FixIt 0.2.17 | NEW Progress bar in the top during page loading.
+  # For more information: https://github.com/CodeByZach/pace
+  [params.pace]
+    enable = false
+    # All available colors:
+    # ["black", "blue", "green", "orange", "pink", "purple", "red", "silver", "white", "yellow"]
+    color = "blue"
+    # All available themes:
+    # ["barber-shop", "big-counter", "bounce", "center-atom", "center-circle", "center-radar", "center-simple",
+    # "corner-indicator", "fill-left", "flash", "flat-top", "loading-bar", "mac-osx", "material", "minimal"]
+    theme = "minimal"
+  
+  # FixIt 0.2.17 | NEW Define custom file paths
+  # Create your custom files in site directory `layouts/partials/custom` and uncomment needed files below
+  [params.customFilePath]
+    # aside = "custom/aside.html"
+    # profile = "custom/profile.html"
+    # footer = "custom/footer.html"
 
   # FixIt 0.2.15 | NEW Developer options
   [params.dev]
@@ -730,7 +812,7 @@ theme = "FixIt"
       type = "vConsole"
 
 # -------------------------------------------------------------------------------------
-# Hugo Settings for theme FixIt
+# Hugo Configuration for theme FixIt
 # -------------------------------------------------------------------------------------
 
 # Markup related config in Hugo
@@ -824,4 +906,4 @@ theme = "FixIt"
 [module]
   [module.hugoVersion]
     extended = true
-    min = "0.84.0"
+    min = "0.89.0"
