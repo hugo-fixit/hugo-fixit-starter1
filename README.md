@@ -19,15 +19,15 @@ It comes with a basic theme structure and configuration. GitHub action has been 
 ▸ public/        # build directory
 ▸ static/        # static files, e.g. favicon.ico
 ▸ themes/        # theme submodules
-  config.toml    # configuration of hugo project
+  config.toml    # configuration file
 ```
 
 ## Installation
 
 1. Go to [Hugo Releases](https://github.com/gohugoio/hugo/releases) and download the lastest `hugo_extended` version, e.g.
 
-    - `hugo_extended_0.88.1_Windows-64bit.zip`
-    - `hugo_extended_0.88.1_macOS-ARM64.tar.gz`
+   - `hugo_extended_0.89.0_Windows-64bit.zip`
+   - `hugo_extended_0.89.0_macOS-ARM64.tar.gz`
 
 2. Clone your blog source
 
