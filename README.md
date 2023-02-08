@@ -14,44 +14,49 @@ It comes with a basic theme structure and configuration. GitHub action has been 
 ▸ .shell/        # shell commands for hugo project, entrance: hugo_main.sh
 ▸ archetypes/    # page archetypes (like scaffolds of archetypes)
 ▸ assets/        # css, js, third-party libraries etc.
+▸ config/        # configuration files
 ▸ content/       # markdown files for hugo project
 ▸ data/          # blog data (allow: yaml, json, toml), e.g. friends.yml
 ▸ public/        # build directory
 ▸ static/        # static files, e.g. favicon.ico
 ▸ themes/        # theme submodules
-  config.toml    # configuration file
 ```
-
-## Installation
-
-1. Go to [Hugo Releases](https://github.com/gohugoio/hugo/releases) and download the lastest `hugo_extended` version, e.g.
-
-   - `hugo_extended_0.89.0_Windows-64bit.zip`
-   - `hugo_extended_0.89.0_macOS-ARM64.tar.gz`
-
-2. Clone your blog source
-
-    ```bash
-    # Clone with your own repository url
-    git clone --recursive git@github.com:hugo-fixit/hugo-fixit-blog.git
-    ```
 
 ## Quick Start
 
-There are three ways to start this blog.
+Just install latest version of [Hugo(>= 0.89.0)](https://gohugo.io/installation/) for your OS (Windows, Linux, macOS).
+
+```bash
+# Clone with your own repository url
+git clone --recursive git@github.com:hugo-fixit/hugo-fixit-blog.git
+```
+
+There are two ways to start this blog.
+
+### NPM
+
+```bash
+npm install
+# build the blog
+npm run build
+# run a local debugging server with watch
+npm run server
+# run a local debugging server in production environment
+npm run server:production
+# update theme submodules
+npm run update:theme
+```
 
 ### Hugo
 
 ```bash
 # Development environment
-hugo server --disableFastRender --navigateToChanged
+hugo server --disableFastRender --navigateToChanged --bind 0.0.0.0
 # Production environment
-hugo server --disableFastRender --navigateToChanged --environment production
+hugo server --disableFastRender --navigateToChanged --environment production --bind 0.0.0.0
 ```
 
-### Shell
-
-Run `hugo_main.sh` to choice frequently-used Hugo commands:
+In addition, you can run `hugo_main.sh` to choice frequently-used Hugo commands:
 
 ```bash
 cd .shell && sh hugo_main.sh
@@ -69,18 +74,4 @@ Please enter the serial number to work
 6. push
 --------------------------------------
 Press Ctrl+C to stop
-```
-
-### NPM
-
-```bash
-npm install
-# build the blog
-npm run build
-# run a local debugging server with watch
-npm run server
-# run a local debugging server in production environment
-npm run server:production
-# update theme submodules
-npm run update:theme
 ```
