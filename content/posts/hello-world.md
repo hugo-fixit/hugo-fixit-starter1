@@ -21,20 +21,31 @@ Head to the documentation page linked below for a complete guidence to get start
 
 ## Quick Start
 
-There are three ways to start this blog.
+There are two ways to start this blog.
+
+### NPM
+
+```bash
+# build the blog
+npm run build
+# run a local debugging server with watch
+npm run server
+# run a local debugging server in production environment
+npm run server:production
+# update theme submodules
+npm run update:theme
+```
 
 ### Hugo
 
 ```bash
 # Development environment
-hugo server --disableFastRender --navigateToChanged
+hugo server --disableFastRender --navigateToChanged --bind 0.0.0.0
 # Production environment
-hugo server --disableFastRender --navigateToChanged --environment production
+hugo server --disableFastRender --navigateToChanged --environment production --bind 0.0.0.0
 ```
 
-### Shell
-
-Run `hugo_main.sh` to choice frequently-used Hugo commands:
+In addition, you can run `hugo_main.sh` to choice frequently-used Hugo commands:
 
 ```bash
 cd .shell && sh hugo_main.sh
@@ -52,20 +63,6 @@ Please enter the serial number to work
 6. push
 --------------------------------------
 Press Ctrl+C to stop
-```
-
-### NPM
-
-```bash
-npm install
-# build the blog
-npm run build
-# run a local debugging server with watch
-npm run server
-# run a local debugging server in production environment
-npm run server:production
-# update theme submodules
-npm run update:theme
 ```
 
 ## Questions, ideas, bugs, pull requests
