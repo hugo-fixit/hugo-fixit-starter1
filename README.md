@@ -28,7 +28,7 @@ Just install latest version of [Hugo(>= 0.89.0)](https://gohugo.io/installation/
 
 ```bash
 # Clone with your own repository url
-git clone --recursive git@github.com:hugo-fixit/hugo-fixit-blog.git
+git clone --recursive git@github.com:hugo-fixit/hugo-fixit-blog-git.git
 ```
 
 There are two ways to start this blog.

@@ -4,11 +4,11 @@ on:
     branches: [ main ]
     paths:
       - 'assets/**'
+      - 'config/**'
       - 'content/**'
       - 'data/**'
       - 'static/**'
       - 'themes/**'
-      - 'config.toml'
   workflow_run:
     workflows: ['Update theme']
     types:
@@ -21,12 +21,8 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
         with:
-          ssh-key: ${{ secrets.SYNC_CONTENT }}
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-
-      - name: Install
-        run: npm install
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -35,7 +31,7 @@ jobs:
           extended: true
 
       - name: Build
-        run: npm run build
+        run: hugo -v --gc --minify
 
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@v4
