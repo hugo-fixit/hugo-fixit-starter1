@@ -4,7 +4,7 @@
 # -------------------------------------------------------------------------------------
 
 title = "Hugo FixIt Blog"
-baseURL = "http://example.org/"
+baseURL = "https://hugo-fixit.github.io/hugo-fixit-starter1/"
 theme = "FixIt"
 defaultContentLanguage = "en"
 languageCode = "en"
