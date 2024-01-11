@@ -32,7 +32,7 @@ For a complete quick start, see this [page](https://fixit.lruihao.cn/documentati
 
 1. Click **Use this template**, and create your repository on GitHub.
 
-    <img width="913" alt="image" src="https://github.com/hugo-fixit/hugo-fixit-blog-git/assets/33419593/d5fbd940-3ffd-4750-b1e6-4e87b50b0696">
+    <img width="913" alt="image" src="https://github.com/hugo-fixit/hugo-fixit-starter1/assets/33419593/d5fbd940-3ffd-4750-b1e6-4e87b50b0696">
 
 2. Once the repository is created, just clone and enjoy it!
 
@@ -91,4 +91,4 @@ git submodule update --remote --merge themes/FixIt
   Head to Setting => Actions => General => Workflow permissions => Check "Read and write permissions".
 </details>
 
-<!-- This project was generated with [hugo-fixit-blog-git](https://github.com/hugo-fixit/hugo-fixit-blog-git). Documentation about the original structure can be found [here](https://github.com/hugo-fixit/hugo-fixit-blog-git#directory-structure). -->
+<!-- This project was generated with [hugo-fixit-starter1](https://github.com/hugo-fixit/hugo-fixit-starter1). -->

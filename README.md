@@ -32,7 +32,7 @@
 
 1. 点击 **Use this template**，在 GitHub 上创建你的仓库。
 
-    <img width="913" alt="image" src="https://github.com/hugo-fixit/hugo-fixit-blog-git/assets/33419593/d5fbd940-3ffd-4750-b1e6-4e87b50b0696">
+    <img width="913" alt="image" src="https://github.com/hugo-fixit/hugo-fixit-starter1/assets/33419593/d5fbd940-3ffd-4750-b1e6-4e87b50b0696">
 
 2. 仓库创建后，只需克隆并开始使用！
 
@@ -91,4 +91,4 @@ git submodule update --remote --merge themes/FixIt
   转到 Setting => Actions => General => Workflow permissions => 选中 "Read and write permissions"。
 </details>
 
-<!-- 该项目是使用 [hugo-fixit-blog-git](https://github.com/hugo-fixit/hugo-fixit-blog-git) 生成的。有关原始结构的文档可以在 [这里](https://github.com/hugo-fixit/hugo-fixit-blog-git#directory-structure) 找到。 -->
+<!-- 该项目是使用 [hugo-fixit-starter1](https://github.com/hugo-fixit/hugo-fixit-starter1) 生成的。 -->
