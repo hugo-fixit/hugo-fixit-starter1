@@ -57,6 +57,14 @@ When your site is ready to deploy, run the following command:
 hugo
 ```
 
+### Deploy to GitHub Pages
+
+1. Head to Setting => Actions => General => Workflow permissions => Check "Read and write permissions".
+2. Manually run Workflow: Actions => Hugo build and deploy => Click Run workflow button.
+3. GitHub Pages settings: Setting => Pages => Source: Deploy from a branch => Branch: `gh-pages` => Save.
+
+> Only need to manually run the Workflow the first time you deploy, and it will be automatically deployed every time you push to the `main` branch.
+
 ### Update theme
 
 Afterwards you can upgrade the theme with the following command:
