@@ -4,7 +4,9 @@
 
 This is a quick start template for Hugo theme [FixIt](https://github.com/hugo-fixit/FixIt). It uses [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) feature to load the theme. If you favor Go more, you can [check this template](https://github.com/hugo-fixit/hugo-fixit-starter).
 
-It comes with a basic theme structure and configuration. GitHub action has been set up to deploy the blog to a public GitHub page automatically. Also, there's a cron job to update the theme automatically everyday.
+It comes with a basic theme structure and [configuration directory](https://gohugo.io/configuration/introduction/#configuration-directory)[^1]. GitHub action has been set up to deploy the blog to a public GitHub page automatically. Also, there's a cron job to update the theme automatically everyday.
+
+[^1]: Instead of a single site configuration file, split your configuration by environment, root configuration key, and language.
 
 ## Directory structure
 

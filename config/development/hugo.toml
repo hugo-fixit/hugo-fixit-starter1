@@ -1,0 +1,5 @@
+title = "Hugo FixIt Blog"
+theme = [
+  "FixIt",
+  "shortcode-docs-bookmark"
+]
