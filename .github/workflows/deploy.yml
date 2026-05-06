@@ -1,7 +1,7 @@
 name: Hugo build and deploy
 on:
   push:
-    branches: [ main ]
+    branches: [main]
     paths:
       - 'assets/**'
       - 'config/**'
@@ -24,7 +24,7 @@ permissions:
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
@@ -35,14 +35,15 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v6
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          submodules: true # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           # use the environment variable HUGO_VERSION as the hugo version, if not set, use `latest`.
           hugo-version: ${{ vars.HUGO_VERSION || 'latest' }}
           extended: true
+      - uses: dw-labs-org/dart-sass-gha@v1
       - name: Hugo build
         run: hugo --gc --minify --logLevel info
       - name: Upload artifact
@@ -63,4 +64,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
-
