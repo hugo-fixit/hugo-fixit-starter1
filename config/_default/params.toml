@@ -82,7 +82,7 @@ dark = "#151b23"
 # Search config
 [search]
 enable = false
-# type of search engine ["algolia", "fuse", "cse", "post-chat"]
+# type of search engine ["algolia", "fuse", "pagefind", "cse", "post-chat"]
 type = "fuse"
 # max index length of the chunked content
 contentLength = 4000
@@ -115,6 +115,19 @@ distance = 100
 ignoreLocation = false
 useExtendedSearch = false
 ignoreFieldNorm = false
+
+# Pagefind search config (http://pagefind.app/)
+[search.pagefind]
+# Pagefind bundle and index directory
+bundlePath = "pagefind/"
+# debounce timeout in milliseconds, set to 0 to disable debounce
+debounceTimeoutMs = 300
+# whether to respect FixIt built-in search visibility rules
+useBuiltInFilters = true
+# optional sort field, current recommended built-in value: "date"
+sortBy = ""
+# sort order for sortBy: ["asc", "desc"]
+sortOrder = "desc"
 
 # FixIt 0.3.16 | NEW Custom Search Engine (CSE)
 [cse]
@@ -192,11 +205,11 @@ icp = ""
 # license info (HTML format is supported)
 license = ""
 
-# FixIt 0.3.0 | NEW whether to show Hugo and theme info
+# FixIt 1.0.0 | CHANGED whether to show Hugo and theme info
 [footer.powered]
 enable = true
-hugoLogo = true
-themeLogo = true
+hugoLogo = false
+themeLogo = false
 
 # FixIt 0.2.17 | CHANGED Site creation time
 [footer.siteTime]
