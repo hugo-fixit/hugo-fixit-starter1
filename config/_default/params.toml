@@ -18,8 +18,6 @@ fingerprint = ""
 dateFormat = "2006-01-02"
 # website images for Open Graph and Twitter Cards
 images = []
-# FixIt 0.2.12 | NEW enable PWA
-enablePWA = false
 # FixIt 0.3.13 | NEW whether to capitalize titles
 capitalizeTitles = true
 # FixIt 0.3.0 | NEW whether to add site title to the title of every page
@@ -61,23 +59,44 @@ dir = "content"
 # available template params: {title} {URL} {sourceURL}
 issueTpl = "title=[BUG]%20{title}&body=|Field|Value|%0A|-|-|%0A|Title|{title}|%0A|URL|{URL}|%0A|Filename|{sourceURL}|"
 
-# App icon config
+# FixIt 1.0.0 | CHANGED App and PWA config
 [app]
-# optional site title override for the app when added to an iOS home screen or Android launcher
-title = "FixIt"
+# whether to enable PWA support
+pwa = false
+# app name used for home screen and manifest (falls back to site title)
+name = ""
+# optional short name for the manifest (falls back to name)
+short_name = ""
 # whether to omit favicon resource links
-noFavicon = false
+no_favicon = false
 # modern SVG favicon to use in place of older style .png and .ico files
-svgFavicon = ""
+svg_favicon = ""
 # Safari mask icon color
-iconColor = "#5bbad5"
+mask_color = "#5bbad5"
 # Windows v8-10 tile color
-tileColor = "#da532c"
+tile_color = "#da532c"
 
-# FixIt 0.2.12 | CHANGED Android browser theme color
-[app.themeColor]
+# Android browser theme color
+[app.theme_color]
 light = "#f6f8fa"
 dark = "#151b23"
+
+# Web app manifest icons (users should provide their own icon files)
+[[app.icons]]
+src = "/apple-touch-icon.png"
+sizes = "180x180"
+type = "image/png"
+purpose = "any maskable"
+
+[[app.icons]]
+src = "/android-chrome-192x192.png"
+sizes = "192x192"
+type = "image/png"
+
+[[app.icons]]
+src = "/android-chrome-512x512.png"
+sizes = "512x512"
+type = "image/png"
 
 # Search config
 [search]
@@ -124,7 +143,7 @@ bundlePath = "pagefind/"
 debounceTimeoutMs = 300
 # whether to respect FixIt built-in search visibility rules
 useBuiltInFilters = true
-# optional sort field, current recommended built-in value: "date"
+# optional sort field: ["date", "title"]
 sortBy = ""
 # sort order for sortBy: ["asc", "desc"]
 sortOrder = "desc"
@@ -136,13 +155,15 @@ engine = "google"
 # search results page URL (layout: search)
 resultsPage = "/search/"
 
-# Google: https://programmablesearchengine.google.com/
 # Google Custom Search Engine Context
+# See: https://programmablesearchengine.google.com/
 [cse.google]
 cx = ""
 
-# Bing (Unsupported): https://www.customsearch.ai/
+# Bing Custom Search Engine Context (unverified)
+# See: https://www.customsearch.ai/
 [cse.bing]
+cx = ""
 
 # Header config
 [header]
@@ -220,7 +241,7 @@ pre = ""
 # e.g. "2021-12-18T16:15:22+08:00"
 value = ""
 
-# FixIt 0.2.17 | NEW footer lines order, optional values: ["first", 0, 1, 2, 3, 4, 5, "last"]
+# FixIt 0.2.17 | NEW footer lines order, optional values: ["first", 0-5, "last"]
 [footer.order]
 powered = 0
 copyright = 0
@@ -843,6 +864,102 @@ postContentBefore = []
 postContentAfter = []
 postFooterBefore = []
 postFooterAfter = []
+
+# FixIt 1.0.0 | NEW SCSS variables customization via config
+# Leave empty to use the theme default value (defined in scss-vars.html).
+# Note: Color values must use hex format (e.g. "#ff0000"), CSS named colors (e.g. "red") are not supported.
+[appearance]
+# Global Typography
+global_font_family = ""
+global_font_size = ""
+global_font_weight = ""
+global_line_height = ""
+global_border_radius = ""
+# Global Colors
+global_background_color = ""
+global_background_color_dark = ""
+global_font_color = ""
+global_font_color_dark = ""
+global_font_secondary_color = ""
+global_font_secondary_color_dark = ""
+global_link_color = ""
+global_link_color_dark = ""
+global_link_hover_color = ""
+global_link_hover_color_dark = ""
+global_border_color = ""
+global_border_color_dark = ""
+# Scrollbar
+scrollbar_color = ""
+scrollbar_hover_color = ""
+# Selection
+selection_color = ""
+selection_color_dark = ""
+# Header
+header_background_color = ""
+header_background_color_dark = ""
+header_title_font_size = ""
+header_title_font_family = ""
+menu_active_color = ""
+menu_active_color_dark = ""
+menu_border_color = ""
+menu_border_color_dark = ""
+search_background_color = ""
+search_background_color_dark = ""
+# Tag Cloud
+tag_cloud_start = ""
+tag_cloud_start_dark = ""
+tag_cloud_end = ""
+tag_cloud_end_dark = ""
+# Single Content
+toc_title_font_size = ""
+toc_content_font_size = ""
+collection_title_font_size = ""
+collection_list_font_size = ""
+related_title_font_size = ""
+related_list_font_size = ""
+single_link_color = ""
+single_link_color_dark = ""
+single_link_hover_color = ""
+single_link_hover_color_dark = ""
+# Table
+table_background_color = ""
+table_background_color_dark = ""
+table_thead_color = ""
+table_thead_color_dark = ""
+table_border_color = ""
+table_border_color_dark = ""
+# Blockquote
+blockquote_color = ""
+blockquote_color_dark = ""
+# Reward
+reward_color = ""
+reward_color_dark = ""
+reward_img_width = ""
+# Pagination
+pagination_link_color = ""
+pagination_link_color_dark = ""
+pagination_link_hover_color = ""
+pagination_link_hover_color_dark = ""
+# Code
+code_color = ""
+code_color_dark = ""
+code_font_family = ""
+code_header_color = ""
+code_header_color_dark = ""
+code_header_background_color = ""
+code_header_background_color_dark = ""
+code_background_color = ""
+code_background_color_dark = ""
+code_error_color = ""
+code_highlight_color = ""
+code_highlight_color_dark = ""
+code_font_size = ""
+code_block_font_size = ""
+# GitHub Corners
+github_corner_color = ""
+github_corner_color_dark = ""
+github_corner_fill = ""
+github_corner_fill_dark = ""
 
 # FixIt 0.2.15 | NEW Developer options
 # select the scope named `public_repo` to generate personal access token,

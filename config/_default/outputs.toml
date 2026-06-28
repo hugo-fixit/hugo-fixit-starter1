@@ -4,7 +4,7 @@
 # -------------------------------------------------------------------------------------
 
 # options to make hugo output files, the optional values are below:
-# home = ["html", "rss", "archives", "offline", "link", "search", "readme", "baidu_urls"]
+# home = ["html", "rss", "archives", "search", "offline", "manifest", "link", "readme", "baidu_urls"]
 # page = ["html", "markdown"]
 # section = ["html", "rss"]
 # taxonomy = ["html"]
@@ -15,9 +15,10 @@ home = [
   "html",
   "rss",
   "archives",
+  "search",
   "offline",
-  "link",
-  "search"
+  "manifest",
+  "link"
 ]
 page = [
   "html",
