@@ -3,7 +3,7 @@
 # See: https://gohugo.io/configuration/outputs/
 # -------------------------------------------------------------------------------------
 
-# options to make hugo output files, the optional values are below:
+# options to make hugo output files, the available values are below:
 # home = ["html", "rss", "archives", "search", "offline", "manifest", "link", "readme", "baidu_urls"]
 # page = ["html", "markdown"]
 # section = ["html", "rss"]
