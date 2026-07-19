@@ -4,7 +4,7 @@
 #   1. Site-level params — apply to the entire site, can NOT be overridden per-page.
 #   2. Page-level params — can be overridden per-page via page front matter.
 #
-# See: https://fixit.lruihao.cn/documentation/basics/#theme-configuration
+# See: https://fixit.lruihao.cn/docs/getting-started/configuration/params/
 # -------------------------------------------------------------------------------------
 
 # FixIt theme version.
@@ -59,7 +59,7 @@ disable_theme_inject = false
 #     enable: false
 #   ---
 #
-# See: https://fixit.lruihao.cn/documentation/content-management/front-matter
+# See: https://fixit.lruihao.cn/docs/content-management/front-matter
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 # Whether to capitalize titles.
@@ -193,7 +193,7 @@ sort = false
 boxed = true
 
 # File tree configuration.
-# See: [File Tree](https://fixit.lruihao.cn/documentation/content-management/shortcodes/extended/file-tree/)
+# See: [File Tree](https://fixit.lruihao.cn/docs/content-management/shortcodes/extended/file-tree/)
 [filetree]
 # The expand level of the tree (expand all: -1, collapse all: 0).
 level = 1
@@ -205,7 +205,7 @@ ignore_list = []
 highlight_list = []
 
 # Mermaid configuration.
-# See: [Mermaid](http://fixit.lruihao.cn/documentation/content-management/diagrams-support/mermaid/)
+# See: [Mermaid](https://fixit.lruihao.cn/docs/content-management/diagrams-support/mermaid/)
 [mermaid]
 # Whether to enable the Mermaid wrapper.
 # When enabled, Mermaid diagrams are wrapped with diagram tabs and actions:
@@ -290,7 +290,7 @@ h5 = "{h2}.{h3}.{h4}.{h5} {title}"
 h6 = "{h2}.{h3}.{h4}.{h5}.{h6} {title}"
 
 # Mathematical formulas configuration.
-# See: [Formula](http://fixit.lruihao.cn/documentation/content-management/markdown-syntax/extended/#formula)
+# See: [Formula](https://fixit.lruihao.cn/docs/content-management/markdown-syntax/extended/#formula)
 [math]
 enable = true
 # Mathematical formulas rendering engines.
@@ -376,7 +376,7 @@ fullscreen = true
 
 # PostChat AI configuration.
 # Based on your posts to build a knowledge base, support AI summary, AI search, and AI Chatbot.
-# See: [洪墨 AI](https://ai.zhheo.com/docs/)
+# See: [HongMoAI](https://ai.zhheo.com/docs/)
 # Get PostChat Key from my invitation link, thanks for your support!
 # https://ai.zhheo.com/console/login?InviteID=85041330
 [post_chat]
@@ -1131,13 +1131,13 @@ duration = -1
 loop = false
 
 # Admonitions custom configuration.
-# See: [Custom Admonitions](https://fixit.lruihao.cn/documentation/content-management/shortcodes/extended/admonition/#custom-admonitions).
+# See: [Custom Admonitions](https://fixit.lruihao.cn/docs/advanced/#custom-admonitions).
 # syntax: `<type> = <icon>`
 [admonition]
 # ban = "fa-solid fa-ban"
 
 # Task lists custom configuration.
-# See: [Custom Task Lists](https://fixit.lruihao.cn/documentation/content-management/advanced/#custom-task-lists).
+# See: [Custom Task Lists](https://fixit.lruihao.cn/docs/advanced/#custom-task-lists).
 # syntax: `<sign> = <icon>`
 [task_list]
 # tip = "fa-regular fa-lightbulb"
