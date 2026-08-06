@@ -27,7 +27,7 @@ jobs:
         run: |
           git submodule update --remote --merge
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
       - name: Fetch and split theme configuration
         run: |
           npx fixit-cli split https://raw.githubusercontent.com/hugo-fixit/FixIt/refs/heads/main/hugo.toml
