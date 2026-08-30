@@ -250,14 +250,24 @@ keep_static = false
 # Whether to make the table of the contents in the sidebar automatically collapsed.
 auto = true
 # Position of TOC.
-# available values: ["left", "right"]
-position = "right"
+# available values: ["start", "end"]
+position = "end"
 # Supersede `markup.tableOfContents` settings.
 ordered = false
 start_level = 2
 end_level = 6
 # Whether to decrease the H1 heading level in content.
 decrease_h1 = false
+
+# Post disclaimer/declaration.
+[disclaimer]
+# Whether to enable the disclaimer.
+enable = false
+# Disclaimer type.
+# available values: ["ai", "repost", "original", "custom"]
+type = "ai"
+# Custom disclaimer content (optional, uses i18n default if empty).
+content = ""
 
 # Display a message at the beginning of an article to warn the reader that its content might be expired.
 [expiration_reminder]
@@ -280,14 +290,6 @@ capitalize = false
 enable = false
 # Only enable in main section pages (default is posts).
 only_main_section = true
-
-[heading.number.format]
-h1 = "{title}"
-h2 = "{h2} {title}"
-h3 = "{h2}.{h3} {title}"
-h4 = "{h2}.{h3}.{h4} {title}"
-h5 = "{h2}.{h3}.{h4}.{h5} {title}"
-h6 = "{h2}.{h3}.{h4}.{h5}.{h6} {title}"
 
 # Mathematical formulas configuration.
 # See: [Formula](https://fixit.lruihao.cn/docs/content-management/markdown-syntax/extended/#formula)
@@ -1297,13 +1299,13 @@ polyfill = false
 # Whether to use object-fit-images to be compatible with older browsers.
 object_fit = false
 
-# GitHub banner in the top-right or top-left corner.
+# GitHub banner in the header corner.
 [github_corner]
 enable = false
 permalink = "https://github.com/hugo-fixit/FixIt"
 title = "View source on GitHub"
-# available values: ["left", "right"]
-position = "right"
+# available values: ["start", "end"]
+position = "end"
 
 # Gravatar configuration.
 [gravatar]
@@ -1324,8 +1326,8 @@ scrollpercent = false
 # Reading progress bar.
 [reading_progress]
 enable = false
-# available values: ["left", "right"]
-start = "left"
+# available values: ["start", "end"]
+start = "start"
 # available values: ["top", "bottom"]
 position = "top"
 reversed = false
