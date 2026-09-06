@@ -259,14 +259,14 @@ end_level = 6
 # Whether to decrease the H1 heading level in content.
 decrease_h1 = false
 
-# Post disclaimer/declaration.
+# {{< version 1.0.0 >}} Post disclaimer/declaration.
 [disclaimer]
 # Whether to enable the disclaimer.
 enable = false
 # Disclaimer type.
 # available values: ["ai", "repost", "original", "custom"]
 type = "ai"
-# Custom disclaimer content (optional, uses i18n default if empty).
+# Custom disclaimer content (optional, uses I18n default if empty).
 content = ""
 
 # Display a message at the beginning of an article to warn the reader that its content might be expired.
@@ -290,6 +290,13 @@ capitalize = false
 enable = false
 # Only enable in main section pages (default is posts).
 only_main_section = true
+
+# {{< version 1.0.0 >}} Table configuration.
+[table]
+# Whether to enable auto table numbering.
+number = false
+# Whether to enable table sorting.
+sort = true
 
 # Mathematical formulas configuration.
 # See: [Formula](https://fixit.lruihao.cn/docs/content-management/markdown-syntax/extended/#formula)
@@ -1262,16 +1269,6 @@ src = ""
 # Cloudflare Analytics.
 [analytics.cloudflare]
 token = ""
-
-# Splitbee Analytics.
-[analytics.splitbee]
-enable = false
-# No cookie mode.
-no_cookie = true
-# Respect the do not track setting of the browser.
-do_not_track = true
-# Token (optional), more info on https://splitbee.io/docs/embed-the-script.
-data_token = ""
 
 # Cookie consent configuration.
 [cookieconsent]
