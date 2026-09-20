@@ -655,11 +655,6 @@ colorful = true
 dislikes = false
 outlined = false
 
-# Commento comment configuration.
-# See: [Commento](https://commento.io)
-[comment.commento]
-enable = false
-
 # Utterances comment configuration.
 # See: [Utterances](https://utteranc.es)
 [comment.utterances]
