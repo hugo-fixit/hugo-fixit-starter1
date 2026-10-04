@@ -7,3 +7,6 @@ _merge = "shallow"
 category = "categories"
 tag = "tags"
 collection = "collections"
+# Enables /authors/<name>/ archive pages for the page-level `authors` front matter field.
+# Optional — sites that never set `authors` are unaffected.
+author = "authors"

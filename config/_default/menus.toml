@@ -26,7 +26,7 @@ draft = false
 # Add FontAwesome icon to a specific menu item.
 icon = "fa-solid fa-archive"
 # Set menu item type.
-# available values: ["mobile", "desktop"]
+# Available values: ["mobile", "desktop"]
 type = ""
 # Whether to show the submenu item divider line.
 divided = false
