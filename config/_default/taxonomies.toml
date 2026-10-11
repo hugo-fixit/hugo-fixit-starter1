@@ -9,4 +9,6 @@ tag = "tags"
 collection = "collections"
 # Enables /authors/<name>/ archive pages for the page-level `authors` front matter field.
 # Optional — sites that never set `authors` are unaffected.
+# IMPORTANT: Keep this in sync with `params.author_archive` above — enable or disable
+# both together, otherwise the build will fail.
 author = "authors"
