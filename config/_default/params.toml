@@ -39,7 +39,7 @@ index_with_subtitle = false
 enable_translation_merge = false
 # Whether to enable tooltip replacement for elements with title attribute, such as footnote references.
 tooltip = true
-# Whether to generate author archive pages at /authors/<name>/.
+# Whether to generate author archive pages at `/authors/<name>/`.
 # IMPORTANT: Keep this in sync with `author = "authors"` in [taxonomies] below —
 # enable or disable both together, otherwise the build will fail.
 author_archive = true
