@@ -60,6 +60,9 @@ capitalizeListTitles = false
 #     "warning-link-check"               - external link check failed
 #     "warning-pagefind"                 - Pagefind search index not found
 #     "warning-remote-image"             - failed to get remote image
+#     "warning-watermark-config"         - watermark `image` or `text` not configured
+#     "warning-watermark-font"           - watermark font not found or CJK font missing
+#     "warning-watermark-image"          - watermark image not found
 #   Hugo message IDs:
 #     "err-youtube-remote"               - youtube shortcode failed to retrieve remote data
 #     "shortcode-vimeo-simple"           - vimeo_simple shortcode failed to retrieve remote data
