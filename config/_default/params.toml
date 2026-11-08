@@ -982,6 +982,10 @@ reverse = false
 # Footer configuration.
 [footer]
 enable = true
+# Whether to show the site brand (logo/avatar and title).
+brand = false
+# Whether to show social links in the footer.
+social = false
 # Whether to show copyright info.
 copyright = true
 # Whether to show the author.
@@ -1009,15 +1013,6 @@ icon = "fa-solid fa-heartbeat"
 pre = ""
 # Example: "2021-12-18T16:15:22+08:00"
 value = ""
-
-# Footer lines order.
-# Available values: ["first", 0-5, "last"]
-[footer.order]
-powered = 0
-copyright = 0
-statistics = 0
-visitor = 0
-beian = 0
 
 # Archives page configuration (all pages of posts type).
 [archives]
@@ -1062,6 +1057,18 @@ list = true
 days = 30
 max_count = 10
 
+# Contribution heatmap configuration for the home page and author archive pages.
+[contribution]
+# Whether to show the contribution heatmap.
+enable = true
+# First day of the week.
+# Available values: ["monday", "sunday"]
+first_day_of_week = "sunday"
+# Whether to show contribution statistics (longest/current streak).
+stats = true
+# Maximum number of years to display, newest first. 0 means all years with posts.
+max_years = 0
+
 # TagCloud configuration for tags page.
 [tag_cloud]
 enable = false
@@ -1099,6 +1106,8 @@ typeit = true
 social = true
 # Disclaimer (HTML format is supported).
 disclaimer = ""
+# Whether to show the contribution heatmap inside the home profile.
+contribution = true
 
 # Home page posts.
 [home.posts]
@@ -1536,6 +1545,11 @@ single_link_color = ""
 single_link_color_dark = ""
 single_link_hover_color = ""
 single_link_hover_color_dark = ""
+# Contribution Heatmap #
+# Theme color of contribution heatmap cells. Defaults to `single_link_color`.
+contribution_color = ""
+# Theme color of contribution heatmap cells in dark mode. Defaults to `single_link_color_dark`.
+contribution_color_dark = ""
 # Table #
 table_background_color = ""
 table_background_color_dark = ""
