@@ -250,7 +250,10 @@ boxed = true
 # See: [File Tree](https://fixit.lruihao.cn/docs/content-management/shortcodes/extended/file-tree/)
 [filetree]
 # The expand level of the tree (expand all: -1, collapse all: 0).
-level = 1
+# `level` is a deprecated alias of `expand_level`.
+expand_level = 1
+# The maximum filesystem scan depth for the file-tree shortcode (root = 0).
+max_depth = 10
 # Whether to append a trailing `/` to folder names.
 folder_slash = false
 # List of file or folder names to ignore.
@@ -317,7 +320,7 @@ enable = false
 # Disclaimer type.
 # Available values: ["ai", "repost", "original", "custom"]
 type = "ai"
-# Custom disclaimer content (optional, uses I18n default if empty).
+# Custom disclaimer content in Markdown format (optional, uses I18n default if empty).
 content = ""
 
 # Display a message at the beginning of an article to warn the reader that its content might be expired.
@@ -1066,6 +1069,12 @@ enable = true
 first_day_of_week = "sunday"
 # Whether to show contribution statistics (longest/current streak).
 stats = true
+# Metric used to calculate contribution intensity.
+# Available values: ["count", "words", "score"]
+# - count: number of posts per day, using fixed thresholds 1 / 2 / 3-4 / 5+.
+# - words: total words per day, bucketed by the p50/p75/p90 of days with posts.
+# - score: posts + words / 1500, bucketed by the p50/p75/p90 of days with posts.
+metric = "count"
 # Maximum number of years to display, newest first. 0 means all years with posts.
 max_years = 0
 
@@ -1108,6 +1117,8 @@ social = true
 disclaimer = ""
 # Whether to show the contribution heatmap inside the home profile.
 contribution = true
+# Whether the home profile fills the first screen height.
+fullscreen = true
 
 # Home page posts.
 [home.posts]
@@ -1546,9 +1557,7 @@ single_link_color_dark = ""
 single_link_hover_color = ""
 single_link_hover_color_dark = ""
 # Contribution Heatmap #
-# Theme color of contribution heatmap cells. Defaults to `single_link_color`.
 contribution_color = ""
-# Theme color of contribution heatmap cells in dark mode. Defaults to `single_link_color_dark`.
 contribution_color_dark = ""
 # Table #
 table_background_color = ""
